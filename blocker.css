@@ -37,7 +37,9 @@
     color: var(--accent-color);
 }
 
-body.site-is-blocked {
+/*.site-is-blocked*/
+/*body:has(#blockerBanner)*/
+.whiy-is-this-not-working {
     overflow: hidden !important;
     height: 100% !important;
 }
