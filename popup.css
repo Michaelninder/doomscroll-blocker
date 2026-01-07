@@ -3,6 +3,7 @@
     --text-color: light-dark(#1e293b, #f1f5f9);
     --accent-color: light-dark(#2563eb, #60a5fa);
     --border-color: light-dark(#e2e8f0, #334155);
+    
     color-scheme: light dark;
 }
 
@@ -21,8 +22,8 @@ body {
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
     font-size: 0.875rem;
-    display: flex;
-    justify-content: space-between;
+    /*display: flex;
+    justify-content: space-between;*/
     align-items: center;
     opacity: 0.8;
 }
