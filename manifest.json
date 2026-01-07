@@ -1,14 +1,20 @@
 {
-    "name": "Doomscroll Block",
-    "description": "Stops distraction by social platforms",
-    "version": "1.0.0",
+    "name": "Doomscroll Blocker",
+    "description": "Stops distraction by socialmedia platforms",
+    "version": "1.1.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
     },
     "content_scripts": [
         {
-            "matches": ["https://tiktok.com/*", "https://youtube.com/shorts/*", "https://x.com/*", "https://instagram.com/*"],
+            "matches": [
+                "https://tiktok.com/*",
+                "https://youtube.com/shorts/*",
+                "https://x.com/*",
+                "https://www.instagram.com/*",
+                "https://facebook.com/*"
+            ],
             "js": ["blocker.js"],
             "css": ["blocker.css", "root.css"],
             "run_at": "document_start"
