@@ -1,0 +1,13 @@
+{
+    "name": "Doomscroll Block",
+    "description": "Stops distraction by social platforms",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [ {
+        "css": [ "styles.css" ],
+        "matches": [ "<all_urls>" ]
+    } ]
+}

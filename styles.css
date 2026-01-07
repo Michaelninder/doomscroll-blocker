@@ -1,0 +1,40 @@
+:root {
+    --bg-color: light-dark(#ffffff, #0f172a);
+    --text-color: light-dark(#1e293b, #f1f5f9);
+    --accent-color: light-dark(#2563eb, #60a5fa);
+    --border-color: light-dark(#e2e8f0, #334155);
+    color-scheme: light dark;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+    min-width: 300px;
+}
+
+.credits {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.credits a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
