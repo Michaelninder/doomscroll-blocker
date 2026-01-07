@@ -3,6 +3,8 @@
     --text-color: light-dark(#1e293b, #f1f5f9);
     --accent-color: light-dark(#2563eb, #60a5fa);
     --border-color: light-dark(#e2e8f0, #334155);
+
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
     
     color-scheme: light dark;
 }

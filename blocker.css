@@ -1,16 +1,43 @@
-@import url('root.css');
-
 #blockerBanner {
     position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
+    inset: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
     background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
     z-index: 2147483647 !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: var(--font-family) !important;
+    text-align: center;
+}
+
+.blocker-content {
+    max-width: 700px;
+    padding: 2rem;
+}
+
+.blocker-content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+    color: var(--text-color);
+}
+
+.blocker-content p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.blocker-content strong {
+    color: var(--accent-color);
 }
 
 html, body {
     overflow: hidden !important;
+    height: 100% !important;
 }

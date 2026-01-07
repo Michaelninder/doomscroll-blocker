@@ -3,11 +3,13 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 1rem;
     line-height: 1.5;
     min-width: 300px;
+    /*border-radius: 12px;
+    border: 1px solid var(--border-color);*/
 }
 
 .credits {
