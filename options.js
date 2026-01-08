@@ -39,9 +39,9 @@ function storeBlockedSites() {
 }
 
 function resetOptions() {
-    blockedSites = [ "x.com", "youtube.com/shorts", "instagram.com", "facebook.com", "tiktok.com" ];
+    blockedSites = [ "x.com/", "youtube.com/shorts/", "instagram.com/", "facebook.com/", "tiktok.com/" ];
 
     storeBlockedSites();
-    
+
     window.location.reload();
 }

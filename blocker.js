@@ -18,4 +18,5 @@ if (isBlocked) {
 `;
 
     document.documentElement.appendChild(blockerBanner);
+    document.body.classList.add('site-is-blocked');
 }
