@@ -19,5 +19,6 @@
             "css": ["blocker.css", "root.css"],
             "run_at": "document_start"
         }
-    ]
+    ],
+    "options_page": "settings.html"
 }

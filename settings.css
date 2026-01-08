@@ -1,0 +1,60 @@
+@import url('root.css');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0 1rem;
+    width: 100%;
+    max-width: var(--container-width, 1200px);
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.credits {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.credits a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
