@@ -20,5 +20,5 @@
             "run_at": "document_start"
         }
     ],
-    "options_page": "settings.html"
+    "options_page": "options.html"
 }
