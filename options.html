@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Doomscroll Blocker</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <!--h2><span class="text-accent">Doomscroll Blocker:</span> Extension Options</h2-->
+
+    <nav>
+        <ul>
+            <li><a href="#overview" class="page-tab active">Overview</a></li>
+            <li><a href="#blocked-sites" class="page-tab">Blocked Sites</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="overview" class="tab-content active">
+            <h3>Overview</h3>
+            <p>Welcome to your focus dashboard, Fabian.</p>
+            
+            <div class="danger-zone">
+                <h4>Danger Zone</h4>
+                <button id="resetOptionsTrigger" class="btn btn-danger">Reset to Defaults</button>
+            </div>
+        </section>
+
+        <section id="blocked-sites" class="tab-content">
+            <h3>Blocked Sites</h3>
+            <div id="sites-list"></div>
+        </section>
+    </main>
+
+    <div id="resetOptionsPopover" class="popover-overlay">
+        <div class="popover-content">
+            <h4>Are you sure?</h4>
+            <p>This will reset your blocked sites to the default list.</p>
+            <div class="popover-actions">
+                <button id="resetOptionsCancel" class="btn">Cancel</button>
+                <button id="resetOptionsSubmit" class="btn btn-danger">Yes, Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
