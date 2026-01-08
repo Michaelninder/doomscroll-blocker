@@ -5,32 +5,84 @@ body {
     color: var(--text-color);
     font-family: var(--font-family);
     margin: 0;
-    padding: 1rem;
-    line-height: 1.5;
-    min-width: 300px;
-    /*border-radius: 12px;
-    border: 1px solid var(--border-color);*/
+    padding: 1.5rem;
+    line-height: 1.6;
+    min-width: 320px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#open-settings {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.6rem;
+    padding: 0.5rem 0.85rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#open-settings:hover {
+    background-color: var(--border-color);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+#open-settings svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accent-color);
+    transition: transform 0.4s ease;
+}
+
+#open-settings:hover svg {
+    transform: rotate(45deg);
+}
+
+footer {
+    margin-top: auto;
 }
 
 .credits {
     margin-top: 2rem;
-    padding-top: 1rem;
+    padding-top: 1.25rem;
     border-top: 1px solid var(--border-color);
-    font-size: 0.875rem;
-    /*display: flex;
-    justify-content: space-between;*/
-    align-items: center;
-    opacity: 0.8;
+    font-size: 0.8rem;
+    text-align: center;
+    letter-spacing: 0.025em;
+    opacity: 0.7;
 }
 
 .credits a {
     color: var(--accent-color);
     text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
+    font-weight: 700;
+    position: relative;
 }
 
-.credits a:hover {
-    text-decoration: underline;
-    opacity: 1;
+.credits a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.credits a:hover::after {
+    width: 100%;
 }
