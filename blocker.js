@@ -1,9 +1,8 @@
-//const _blockedSites = [ "x.com", "youtube.com/shorts", "instagram.com", "facebook.com", "tiktok.com", "fabianternis.de"];
-//localStorage.setItem("blockedSites", JSON.stringify(_blockedSites));
+const _blockedSites = ["x.com", "youtube.com/shorts", "instagram.com", "facebook.com", "tiktok.com", "fabianternis.de/"];
+localStorage.setItem("blockedSites", JSON.stringify(_blockedSites));
 
 const blockedSites = JSON.parse(localStorage.getItem("blockedSites")) || [];
 const currentUrl = window.location.href;
-//console.log(blockedSites)
 
 const isBlocked = blockedSites.some((site) => currentUrl.includes(site));
 
@@ -18,5 +17,6 @@ if (isBlocked) {
 `;
 
     document.documentElement.appendChild(blockerBanner);
-    document.body.classList.add('site-is-blocked');
+    //document.documentElement.classList.add("site-is-blocked");
+    document.classList.add('whiy-is-this-not-working');
 }
