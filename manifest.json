@@ -1,8 +1,9 @@
 {
     "name": "Doomscroll Blocker",
     "description": "Stops distraction by socialmedia platforms",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "manifest_version": 3,
+    "permissions": ["storage"],
     "action": {
         "default_popup": "popup.html"
     },

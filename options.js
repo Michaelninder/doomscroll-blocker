@@ -2,8 +2,11 @@ const resetOptionsTrigger = document.getElementById("resetOptionsTrigger");
 const resetOptionsPopover = document.getElementById("resetOptionsPopover");
 const resetOptionsSubmit = document.getElementById("resetOptionsSubmit");
 const resetOptionsCancel = document.getElementById("resetOptionsCancel");
+const sitesListContainer = document.getElementById("sites-list");
+const addSiteBtn = document.getElementById("addSiteBtn");
+const newSiteInput = document.getElementById("newSiteInput");
 
-let blockedSites = JSON.parse(localStorage.getItem("blockedSites")) || [];
+let blockedSites = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".page-tab");
@@ -32,16 +35,77 @@ document.addEventListener("DOMContentLoaded", () => {
         resetOptions();
         resetOptionsPopover.classList.remove("visible");
     });
+
+    addSiteBtn.addEventListener("click", () => {
+        const url = newSiteInput.value.trim();
+        if (url && !blockedSites.includes(url)) {
+            blockedSites.push(url);
+            chrome.storage.local.set({ blockedSites }, () => {
+                newSiteInput.value = "";
+                renderSitesList();
+            });
+        }
+    });
+
+    loadBlockedSites();
 });
 
-function storeBlockedSites() {
-    localStorage.setItem("blockedSites", JSON.stringify(blockedSites));
+function loadBlockedSites() {
+    chrome.storage.local.get(["blockedSites"], (result) => {
+        blockedSites = result.blockedSites || [];
+        renderSitesList();
+    });
+}
+
+function renderSitesList() {
+    sitesListContainer.innerHTML = "";
+
+    if (blockedSites.length === 0) {
+        sitesListContainer.innerHTML = "<p>No sites blocked yet.</p>";
+        return;
+    }
+
+    const list = document.createElement("ul");
+    list.className = "site-items-list";
+
+    blockedSites.forEach((site, index) => {
+        const li = document.createElement("li");
+        li.className = "site-item";
+        li.innerHTML = `
+      <span>${site}</span>
+      <button class="btn-remove" data-index="${index}">&times;</button>
+    `;
+        list.appendChild(li);
+    });
+
+    sitesListContainer.appendChild(list);
+
+    document.querySelectorAll(".btn-remove").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const index = e.target.getAttribute("data-index");
+            removeSite(index);
+        });
+    });
+}
+
+function removeSite(index) {
+    blockedSites.splice(index, 1);
+    chrome.storage.local.set({ blockedSites }, () => {
+        renderSitesList();
+    });
 }
 
 function resetOptions() {
-    blockedSites = [ "x.com/", "youtube.com/shorts/", "instagram.com/", "facebook.com/", "tiktok.com/" ];
+    blockedSites = [
+        "x.com/",
+        "youtube.com/shorts/",
+        "instagram.com/",
+        "facebook.com/",
+        "tiktok.com/",
+    ];
 
-    storeBlockedSites();
-
-    window.location.reload();
+    chrome.storage.local.set({ blockedSites }, () => {
+        renderSitesList();
+        window.location.reload();
+    });
 }

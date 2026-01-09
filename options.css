@@ -212,3 +212,61 @@ footer a:hover svg {
     gap: 1rem;
     margin-top: 1.5rem;
 }
+
+.site-items-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.site-item span {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: #ff4444;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  transition: transform 0.2s ease;
+}
+
+.btn-remove:hover {
+  transform: scale(1.2);
+}
+
+.add-site-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.input-field {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: inherit;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
