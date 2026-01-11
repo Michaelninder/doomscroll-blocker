@@ -1,5 +1,11 @@
-const _blockedSites = ["x.com", "youtube.com/shorts", "instagram.com", "facebook.com", "tiktok.com", "fabianternis.de/"];
-localStorage.setItem("blockedSites", JSON.stringify(_blockedSites));
+chrome.storage.local.get(["initialised"], (res) => {
+  if (!res.initialised) {
+    chrome.storage.local.set({
+      blockedSites: DEFAULT_SITES,
+      initialised: true,
+    });
+  }
+});
 
 chrome.storage.local.get(["blockedSites"], (result) => {
   const blockedSites = result.blockedSites || [];
@@ -11,11 +17,11 @@ chrome.storage.local.get(["blockedSites"], (result) => {
     const blockerBanner = document.createElement("div");
     blockerBanner.id = "blockerBanner";
     blockerBanner.innerHTML = `
-    <div class="blocker-content">
-        <h1>Focus Mode Active</h1>
-        <p>This site has been blocked by <strong>Doomscroll Blocker</strong></p>
-    </div>
-`;
+      <div class="blocker-content">
+          <h1>Focus Mode Active</h1>
+          <p>This site has been blocked by <strong>Doomscroll Blocker</strong></p>
+      </div>
+    `;
 
     document.documentElement.appendChild(blockerBanner);
     document.documentElement.classList.add("whiy-is-this-not-working");
