@@ -4,6 +4,7 @@ const resetOptionsSubmit = document.getElementById("resetOptionsSubmit");
 const resetOptionsCancel = document.getElementById("resetOptionsCancel");
 const sitesListContainer = document.getElementById("sites-list");
 const addSiteBtn = document.getElementById("addSiteBtn");
+const addSiteForm = document.getElementById("addSiteForm");
 const newSiteInput = document.getElementById("newSiteInput");
 
 let blockedSites = [];
@@ -45,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderSitesList();
             });
         }
+    });
+    addSiteForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        addSiteBtn.click(); // too lazzy for function
     });
 
     loadBlockedSites();
