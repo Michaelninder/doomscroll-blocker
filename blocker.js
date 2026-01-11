@@ -66,7 +66,7 @@ chrome.storage.local.get(["blockedSites"], (result) => {
   const currentUrl = window.location.href;
 
   //const isBlocked = blockedSites.some((site) => trimURL(currentUrl).includes(trimURL(site)));
-  const isBlocked = blockedSites.some((site) => trimURL(currentUrl).endsWith(trimURL(site)));
+  const isBlocked = blockedSites.some((site) => trimURL(currentUrl).startsWith(trimURL(site)));
   //blockedSites.some((site) => console.log(trimURL(site)));
   //console.warn(trimURL(currentUrl));
 
