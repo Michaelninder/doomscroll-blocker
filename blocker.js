@@ -7,11 +7,19 @@ chrome.storage.local.get(["initialised"], (res) => {
   }
 });
 
+function trimURL(url) {
+  url = url.replace("www.", "").replace("https://", "").replace("http://", "");
+  return url.endsWith("/") ? url.slice(0, -1) : url;
+};
+
 chrome.storage.local.get(["blockedSites"], (result) => {
   const blockedSites = result.blockedSites || [];
   const currentUrl = window.location.href;
 
-  const isBlocked = blockedSites.some((site) => currentUrl.includes(site));
+  //const isBlocked = blockedSites.some((site) => trimURL(currentUrl).includes(trimURL(site)));
+  const isBlocked = blockedSites.some((site) => trimURL(currentUrl).endsWith(trimURL(site)));
+  //blockedSites.some((site) => console.log(trimURL(site)));
+  //console.warn(trimURL(currentUrl));
 
   if (isBlocked) {
     const blockerBanner = document.createElement("div");
