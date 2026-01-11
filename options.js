@@ -96,15 +96,9 @@ function removeSite(index) {
 }
 
 function resetOptions() {
-    blockedSites = [
-        "x.com/",
-        "youtube.com/shorts/",
-        "instagram.com/",
-        "facebook.com/",
-        "tiktok.com/",
-    ];
+    blockedSites = [...DEFAULT_SITES];
 
-    chrome.storage.local.set({ blockedSites }, () => {
+    chrome.storage.local.set({ blockedSites, initialised: true }, () => {
         renderSitesList();
         window.location.reload();
     });
