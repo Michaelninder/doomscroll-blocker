@@ -14,7 +14,7 @@
     text-align: center !important;
 }
 
-.blocker-content {
+#blockerBanner .blocker-content {
     max-width: 900px;
     padding: 2rem;
     flex-grow: 1;
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.blocker-content h1 {
+#blockerBanner .blocker-content h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
@@ -32,7 +32,7 @@
     color: var(--text-color);
 }
 
-.blocker-content p {
+#blockerBanner .blocker-content p {
     font-size: 1.25rem;
     line-height: 1.75;
     color: var(--text-color);
@@ -40,12 +40,12 @@
     margin-bottom: 2rem;
 }
 
-.blocker-content .text-accent {
+#blockerBanner .blocker-content .text-accent {
     color: var(--accent-color);
     font-weight: 700;
 }
 
-.blocker-footer {
+#blockerBanner .blocker-footer {
     padding: 2rem;
     width: 100%;
     display: flex;
@@ -55,17 +55,17 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.blocker-footer .credits {
+#blockerBanner .blocker-footer .credits {
     font-size: 0.875rem;
     opacity: 0.6;
 }
 
-.blocker-footer a {
+#blockerBanner .blocker-footer a {
     color: var(--text-color);
     text-decoration: none;
 }
 
-.blocker-footer svg {
+#blockerBanner .blocker-footer svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
@@ -73,11 +73,11 @@
     transition: opacity 0.2s;
 }
 
-.blocker-footer svg:hover {
+#blockerBanner .blocker-footer svg:hover {
     opacity: 1;
 }
 
-.btn-return {
+#blockerBanner .btn-return {
     padding: 0.75rem 1.5rem;
     background-color: var(--accent-color);
     color: white;
@@ -89,7 +89,7 @@
     transition: all .2s ease-in; /* I recognised instagram.com having css that changesd this ... */
 }
 
-.btn-return:hover {
+#blockerBanner .btn-return:hover {
     padding: 0.75rem 2.25rem;
     text-decoration: none;
     font-weight: 700;

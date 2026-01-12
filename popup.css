@@ -1,6 +1,6 @@
 @import url('root.css');
 
-body {
+body.popup {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-family);
