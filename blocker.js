@@ -74,13 +74,13 @@ chrome.storage.local.get(["blockedSites"], (result) => {
     const blockerBanner = document.createElement("div");
     blockerBanner.id = "blockerBanner";
     blockerBanner.innerHTML = `
-      <div class="blocker-content">
+      <div class="blocker-content doomscroll-blocker"">
           <h1>Focus Mode Active</h1>
           <p>This site is currently hidden by <span class="text-accent">Doomscroll Blocker</span> to help you stay productive.</p>
           <a href="https://google.com" class="btn-return">Escape this site</a>
       </div>
       
-      <footer class="blocker-footer">
+      <footer class="blocker-footer doomscroll-blocker"">
         <div class="credits">
           Made by <a href="https://fabianternis.dev" target="_blank">Fabian Ternis</a>
         </div>
