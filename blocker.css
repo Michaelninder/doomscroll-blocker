@@ -1,106 +1,110 @@
 :root {
-  --bg-color: #0f172a;
-  --text-color: #f8fafc;
-  --accent-color: #3b82f6;
-  --font-family: ui-sans-serif, system-ui, sans-serif;
+    --bg-color: light-dark(#ffffff, #0f172a);
+    --text-color: light-dark(#1e293b, #f1f5f9);
+    --accent-color: light-dark(#2563eb, #60a5fa);
+    --border-color: light-dark(#e2e8f0, #334155);
+
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
+    
+    color-scheme: light dark;
 }
 
 #blockerBanner {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background-color: var(--bg-color) !important;
-  color: var(--text-color) !important;
-  z-index: 2147483647 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-family: var(--font-family) !important;
-  text-align: center !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: var(--font-family) !important;
+    text-align: center !important;
 }
 
 #blockerBanner .blocker-content {
-  max-width: 600px;
-  padding: 2rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    max-width: 900px;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #blockerBanner h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.05em;
-  line-height: 1;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+    line-height: 1;
 }
 
 #blockerBanner p {
-  font-size: 1.25rem;
-  line-height: 1.75;
-  opacity: 0.9;
-  margin-bottom: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
 }
 
 #blockerBanner .text-accent {
-  color: var(--accent-color);
-  font-weight: 700;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 #blockerBanner .btn-return {
-  padding: 0.875rem 2rem;
-  background-color: var(--accent-color);
-  color: white !important;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.125rem;
-  cursor: pointer;
-  text-decoration: none !important;
-  transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 0.875rem 2rem;
+    background-color: var(--accent-color);
+    color: white !important;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 #blockerBanner .btn-return:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 #blockerBanner .blocker-footer {
-  padding: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
 }
 
 #blockerBanner .blocker-footer .credits {
-  font-size: 0.875rem;
-  opacity: 0.6;
+    font-size: 0.875rem;
+    opacity: 0.6;
 }
 
 #blockerBanner .blocker-footer a {
-  color: inherit;
-  text-decoration: underline;
+    color: inherit;
+    text-decoration: underline;
 }
 
 #blockerBanner .blocker-footer svg {
-  width: 28px;
-  height: 28px;
-  fill: currentColor;
-  opacity: 0.6;
-  transition: opacity 0.2s;
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    opacity: 0.6;
+    transition: opacity 0.2s;
 }
 
 #blockerBanner .blocker-footer svg:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .doomscroll-locked {
-  overflow: hidden !important;
-  height: 100% !important;
+    overflow: hidden !important;
+    height: 100% !important;
 }
