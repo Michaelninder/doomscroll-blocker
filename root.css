@@ -1,4 +1,5 @@
-.doomscroll-blocker:root {
+.doomscroll-blocker:root,
+#blockerBanner:root {
     --bg-color: light-dark(#ffffff, #0f172a);
     --text-color: light-dark(#1e293b, #f1f5f9);
     --accent-color: light-dark(#2563eb, #60a5fa);
