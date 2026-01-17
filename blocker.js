@@ -12,26 +12,33 @@ function trimURL(url) {
 }
 
 function injectStylesheet() {
+  if (document.getElementById("doomscroll-blocker-style")) return;
   const link = document.createElement("link");
+  link.id = "doomscroll-blocker-style";
   link.rel = "stylesheet";
   link.href = chrome.runtime.getURL("blocked-site.css");
   (document.head || document.documentElement).appendChild(link);
 }
 
-chrome.storage.local.get(["blockedSites"], (result) => {
-  const blockedSites = result.blockedSites || [];
-  const currentUrl = window.location.href;
-  const isBlocked = blockedSites.some((site) =>
-    trimURL(currentUrl).startsWith(trimURL(site))
-  );
+function checkAndBlock() {
+  chrome.storage.local.get(["blockedSites"], (result) => {
+    const blockedSites = result.blockedSites || [];
+    const currentUrl = window.location.href;
+    const isBlocked = blockedSites.some((site) =>
+      trimURL(currentUrl).startsWith(trimURL(site))
+    );
 
-  if (isBlocked) {
-    injectStylesheet();
-    document.documentElement.classList.add("doomscroll-locked");
+    const existingBanner = document.getElementById("blockerBanner");
 
-    const blockerBanner = document.createElement("div");
-    blockerBanner.id = "blockerBanner";
-    blockerBanner.innerHTML = `
+    if (isBlocked) {
+      if (existingBanner) return;
+
+      injectStylesheet();
+      document.documentElement.classList.add("doomscroll-locked");
+
+      const blockerBanner = document.createElement("div");
+      blockerBanner.id = "blockerBanner";
+      blockerBanner.innerHTML = `
       <div class="blocker-content">
           <h1>Focus Mode</h1>
           <p>
@@ -53,7 +60,23 @@ chrome.storage.local.get(["blockedSites"], (result) => {
         </a>
       </footer>
     `;
+      document.documentElement.appendChild(blockerBanner);
+    } else if (existingBanner) {
+      existingBanner.remove();
+      document.documentElement.classList.remove("doomscroll-locked");
+    }
+  });
+}
 
-    document.documentElement.appendChild(blockerBanner);
+let lastUrl = location.href;
+new MutationObserver(() => {
+  const url = location.href;
+  if (url !== lastUrl) {
+    lastUrl = url;
+    checkAndBlock();
   }
-});
+}).observe(document, { subtree: true, childList: true });
+
+window.addEventListener("popstate", checkAndBlock);
+
+checkAndBlock();
