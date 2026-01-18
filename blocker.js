@@ -43,7 +43,7 @@ function checkAndBlock() {
           <h1>Focus Mode</h1>
           <p>
             This site is hidden by 
-            <span class="text-accent">Doomscroll Blocker</span> 
+            <a href="https://github.com/michaelninder/doomscroll-blocker" class="text-accent">Doomscroll Blocker</a> 
             to help you stay productive.
           </p>
           <a href="https://google.com" class="btn-return">Back to Safety</a>
